@@ -22,7 +22,7 @@
       <button label="&SCOWSitesButtonLabel;"
               oncommand = "SCOWCreateSiteList(event);"/>
       <label value = "&SCOWSitesListLabel;" control = "SCOWListOfSites"/>
-      <listbox id = "SCOWListOfSites" onselect= "revealSiteProperties(event);">
+      <listbox id = "SCOWListOfSites" onselect= "SCOWRevealSiteProperties(event);">
         <!-- TODO WITH JAVASCRIPT -->
       </listbox>
     </vbox>

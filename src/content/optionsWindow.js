@@ -1,37 +1,46 @@
+
+var SCOWSiteHolderArray = [];
+
 function SCOWCreateSiteList(event){
 
     var SCOWNewSiteLabel = window.prompt("Enter website");
     
-    if (SCOWNewSite != null) {
+    if (SCOWNewSiteLabel != null) {
         var SCOWSiteListElement = document.getElementById("SCOWListOfSites");
         SCOWSiteListElement.appendItem(SCOWNewSiteLabel);
+        SCOWSiteHolderArray.push()
     
         SCOWCreateNewCheckboxHidden(SCOWNewSiteLabel);
         
-    }
-    
+    }  
 }
 
 function SCOWCreateNewCheckboxHidden(SCOWNewSiteLabel){
     var SCOWNewCheckbox = document.createElement("checkbox");
-    SCOWNewCheckbox.setAttribute("id", SCOW+SCOWNewSiteLabel+BlockCheckbox);
+    SCOWNewCheckbox.setAttribute("id", "SCOW"+SCOWNewSiteLabel+"BlockCheckboxId");
     SCOWNewCheckbox.setAttribute("hidden", "true");
     SCOWNewCheckbox.setAttribute("disabled", "false");
-    SCOWNewCheckbox.setAttribute("label",SelfControlBlockCheckboxLabel);
     
-    SCOWDocBlockingVbox = document.getElementByID("SCOWBlockingVboxID");
-    SCOWDocBLockingVbox.appendChild("checkbox", SCOWNewCheckbox);
+    var SCOWStringBundle = document.getElementById("SCOWStringBundle");
+    var SCOWNewCheckboxLabel = SCOWStringBundle.getString("SCOWBlockCheckboxLabel");
+    SCOWNewCheckbox.setAttribute("label",SCOWNewCheckboxLabel);
+    
+    var SCOWDocBlockingVbox = document.getElementById("SCOWBlockingVboxID");
+    SCOWDocBlockingVbox.appendChild(SCOWNewCheckbox);
 }
 
 
 
 function SCOWRevealSiteProperties(event) {
-    SCOWCurrBlockCheckbox.hidden = "true";
+    var SCOWCurrBlockCheckboxEle = document.getElementById("SCOWBlockCheckbox");
+    SCOWCurrBlockCheckboxEle.hidden = "true";
     
-    SCOWSelectedSiteBlockCheckboxID = "SCOW"+this.selectedItem.label+"BlockCheckbox";
-    SCOWSelectedSiteBlockCheckboxElement = document.getElementById("SCOWSelectedSiteBlockCheckboxID");
-    SCOWSelectedSiteBlockCheckboxElement.hidden = "false";
-    SCOWSelectedSiteBLockCheckboxElement.disabled = "false";
+    var SCOWSiteListEle = document.getElementById("SCOWListOfSites");
+    var SCOWSelectedSiteBlockCheckboxId = "SCOW"+SCOWSiteListEle.selectedItem.label+"BlockCheckboxId";
+    
+    var SCOWSelectedSiteBlockCheckboxEle = document.getElementById(SCOWSelectedSiteBlockCheckboxId);
+    SCOWSelectedSiteBlockCheckboxEle.setAttribute("hidden", "false");
+    SCOWSelectedSiteBlockCheckboxEle.setAttribute("disabled", "false");
 }
 
 
