@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!-- Extremely recommended to keep this css include!! -->
+
+<!DOCTYPE window SYSTEM
+  "chrome://SelfControl/locale/optionsWindow.dtd">
+
+<window id="SCOptionsWindow" title="Options"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <script type="application/x-javascript"
+    src="chrome://SelfControl/content/optionsWindow.js" />
+  
+  <stringbundleset id="SCOWstringbundleset">
+    <stringbundle id="SCOWStringBundle"
+      src="chrome://SelfControl/locale/optionsWindow.properties" />
+  </stringbundleset>
+  
+  <hbox>
+    
+    <vbox>
+      <button label="&SCOWSitesButtonLabel;"
+              oncommand = "SCOWCreateSiteList(event);"/>
+      <label value = "&SCOWSitesListLabel;" control = "SCOWListOfSites"/>
+      <listbox id = "SCOWListOfSites" onselect= "revealSiteProperties(event);">
+        <!-- TODO WITH JAVASCRIPT -->
+      </listbox>
+    </vbox>
+    
+    <groupbox>
+      <caption label = "&SCOWGroupBoxLabel;"/>
+      <vbox>
+        <description id="SCOWDurationTodayID" value = "&SCOWTimeDurationTodayLabel;"/>
+        
+        <description id="SCOWDurationWeekID" value = "&SCOWTimeDurationWeekLabel;" />
+        
+        <description id="SCOWDurationMonthID" value = "&SCOWTimeDurationMonthLabel;" />
+        
+        <description id="SCOWDurationYearID" value = "&SCOWTimeDurationYearLabel;" />
+        
+        <descirption id="SCOWDurationRemainingID" value = "&SCOWTimeDurationRemainingLabel;" />
+        
+      </vbox>
+    </groupbox>
+    
+    <vbox>
+      <checkbox id="SCOWBlockCheckbox"
+                label="&SCOWTimeBlockCheckboxLabel;"
+                disabled="true"
+                hidden = "false"/>
+      
+      <button id="SCOWHoursInputButton"
+              label ="&SCOWHoursInputLabel;"
+              disabled= "true"
+              hidden = "false"/>
+      <button id="SCOWMinutesInputButton"
+              label="&SCOWMinutesInputLabel;"
+              disabled="true"
+              hidden="false"/>
+    </vbox>
+    
+  </hbox>
+  
+  
+</window>

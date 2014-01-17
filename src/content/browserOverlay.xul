@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css"
+  href="chrome://xulschoolhello/skin/browserOverlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM
+  "chrome://SelfControl/locale/browserOverlay.dtd">
+
+<overlay id="SelfControl-browser-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+    src="chrome://SelfControl/content/browserOverlay.js" />
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="SelfControlStringBundle"
+      src="chrome://SelfControl/locale/browserOverlay.properties" />
+  </stringbundleset>
+
+  <menupopup id="menu_ToolsPopup">
+    <menu id="SelfControlMenu" label="&SelfControlLabel;"
+      accesskey="&SelfControlAccessKey;"
+      insertbefore="devToolsEndSeparator">
+      <menupopup>
+        <menuitem id="SelfControlMenuItem1"
+          label="&SelfControlOptionsLabel;"
+          accesskey="&SelfControlOptionsAccessKey;"
+          oncommand="openOptionsWindow(event);" />
+      </menupopup>
+    </menu>
+  </menupopup>
+
+  <vbox id="appmenuSecondaryPane">
+    <menu id="SelfControlMenu2" label="&SelfControlLabel;"
+      accesskey="&SelfControlAccessKey;"
+      insertafter="appmenu_addons">
+      <menupopup>
+        <menuitem id="SelfControlMenuItem2"
+          label="&SelfControlOptionsLabel;"
+          accesskey="&SelfControlOptionsAccessKey;"
+          oncommand="openOptionsWindow(event);" />
+      </menupopup>
+    </menu>
+  </vbox>
+</overlay>
