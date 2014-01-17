@@ -43,7 +43,7 @@
       </vbox>
     </groupbox>
     
-    <vbox>
+    <vbox id= "SCOWBlockingVboxID">
       <checkbox id="SCOWBlockCheckbox"
                 label="&SCOWTimeBlockCheckboxLabel;"
                 disabled="true"

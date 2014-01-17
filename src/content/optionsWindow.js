@@ -1,34 +1,37 @@
-function SCOWSiteObj(){
-    this.SCOWSiteObjAddition = window.prompt("Enter website");
-    
-    if (this.SCOWSiteObjAddition != null) {
-        
-        if (SCOWSiteObj.count == undefined){
-            SCOWSiteObj.count = 1;
-        }else{
-            SCOWSiteObj.count++;
-        }
-  
-    }
-}
-
-
 function SCOWCreateSiteList(event){
-    var SCOWSite = new SCOWSiteObj();
-    var SCOWSiteAddition = SCOWSite.SCOWSiteObjAddition;
+
+    var SCOWNewSiteLabel = window.prompt("Enter website");
     
-    if (SCOWSiteAddition != null) {
+    if (SCOWNewSite != null) {
         var SCOWSiteListElement = document.getElementById("SCOWListOfSites");
-        SCOWSiteListElement.appendItem(SCOWSiteAddition)
+        SCOWSiteListElement.appendItem(SCOWNewSiteLabel);
     
+        SCOWCreateNewCheckboxHidden(SCOWNewSiteLabel);
+        
     }
     
-    
-    
 }
+
+function SCOWCreateNewCheckboxHidden(SCOWNewSiteLabel){
+    var SCOWNewCheckbox = document.createElement("checkbox");
+    SCOWNewCheckbox.setAttribute("id", SCOW+SCOWNewSiteLabel+BlockCheckbox);
+    SCOWNewCheckbox.setAttribute("hidden", "true");
+    SCOWNewCheckbox.setAttribute("disabled", "false");
+    SCOWNewCheckbox.setAttribute("label",SelfControlBlockCheckboxLabel);
+    
+    SCOWDocBlockingVbox = document.getElementByID("SCOWBlockingVboxID");
+    SCOWDocBLockingVbox.appendChild("checkbox", SCOWNewCheckbox);
+}
+
+
 
 function SCOWRevealSiteProperties(event) {
-    this.selectedItem.
+    SCOWCurrBlockCheckbox.hidden = "true";
+    
+    SCOWSelectedSiteBlockCheckboxID = "SCOW"+this.selectedItem.label+"BlockCheckbox";
+    SCOWSelectedSiteBlockCheckboxElement = document.getElementById("SCOWSelectedSiteBlockCheckboxID");
+    SCOWSelectedSiteBlockCheckboxElement.hidden = "false";
+    SCOWSelectedSiteBLockCheckboxElement.disabled = "false";
 }
 
 
