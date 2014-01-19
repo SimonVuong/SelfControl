@@ -5,18 +5,18 @@
 <!DOCTYPE window SYSTEM
   "chrome://SelfControl/locale/optionsWindow.dtd">
 
-<window id="SCOptionsWindow" title="Options"
+<window id="SCOptionsWindow" title="Options" width="550"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   
   <script type="application/x-javascript"
     src="chrome://SelfControl/content/optionsWindow.js" />
   
   <stringbundleset id="SCOWstringbundleset">
-    <stringbundle id="SCOWStringBundle"
+    <stringbundle id="SCOWStringBundleId"
       src="chrome://SelfControl/locale/optionsWindow.properties" />
   </stringbundleset>
   
-  <hbox>
+  <hbox id = "SCOWHboxId">
     
     <vbox>
       <button label="&SCOWSitesButtonLabel;"
@@ -27,36 +27,55 @@
       </listbox>
     </vbox>
     
-    <groupbox>
+    <groupbox id = "SCOWGroupboxId">
       <caption label = "&SCOWGroupBoxLabel;"/>
-      <vbox>
-        <description id="SCOWDurationTodayID" value = "&SCOWTimeDurationTodayLabel;"/>
+      <vbox id = "SCOWTimeVboxId">
+        <description id="SCOWTimeTodayId" value = "&SCOWTimeTodayLabel;"/>
         
-        <description id="SCOWDurationWeekID" value = "&SCOWTimeDurationWeekLabel;" />
+        <description id="SCOWTimeWeekId" value = "&SCOWTimeWeekLabel;" />
         
-        <description id="SCOWDurationMonthID" value = "&SCOWTimeDurationMonthLabel;" />
+        <description id="SCOWTimeMonthId" value = "&SCOWTimeMonthLabel;" />
         
-        <description id="SCOWDurationYearID" value = "&SCOWTimeDurationYearLabel;" />
+        <description id="SCOWTimeYearId" value = "&SCOWTimeYearLabel;" />
         
-        <descirption id="SCOWDurationRemainingID" value = "&SCOWTimeDurationRemainingLabel;" />
+        <description id="SCOWTimeRemainingId" value = "&SCOWTimeRemainingLabel;" />
         
       </vbox>
     </groupbox>
     
-    <vbox id= "SCOWBlockingVboxID">
-      <checkbox id="SCOWBlockCheckbox"
+    <vbox id= "SCOWBlockVboxId">
+      <checkbox id="SCOWBlockCheckboxId"
                 label="&SCOWTimeBlockCheckboxLabel;"
                 disabled="true"
                 hidden = "false"/>
       
-      <button id="SCOWHoursInputButton"
-              label ="&SCOWHoursInputLabel;"
+      <label value ="&SCOWBlockUntilLabel;"/>
+      
+      <datepicker type ="grid" disabled = "true"/>
+      
+      <timepicker disabled="true" hideseconds="true"/>
+
+    
+<!--  
+      <hbox>
+        <textbox type="number" disabled="true"  width ="50" />
+        <description value = ":"/>
+        <textbox type="number" disabled="true" width="50"/>
+        
+        <menulist disabled = "true">
+          <menupopup >
+            <menuitem label="&SCOWBlockTimeAMLabel;" />
+            <menuitem label="&SCOWBlockTimePMLabel;" />
+          </menupopup>
+        </menulist>
+      </hbox>
+-->
+
+      <button id="SCOWUntilBlockButtonId"
+              label ="&SCOWUntilBlockButtonLabel;"
               disabled= "true"
-              hidden = "false"/>
-      <button id="SCOWMinutesInputButton"
-              label="&SCOWMinutesInputLabel;"
-              disabled="true"
-              hidden="false"/>
+              width = "80"/>
+
     </vbox>
     
   </hbox>

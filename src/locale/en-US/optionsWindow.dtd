@@ -1,11 +1,13 @@
 <!ENTITY SCOWSitesButtonLabel                    "Add site(s)">
 <!ENTITY SCOWSitesListLabel                      "Site(s)">
-<!ENTITY SCOWGroupBoxLabel                      "Time Spent">
-<!ENTITY SCOWTimeDurationTodayLabel                      "Today:">
-<!ENTITY SCOWTimeDurationWeekLabel                "This week:">
-<!ENTITY SCOWTimeDurationMonthLabel                       "This month:">
-<!ENTITY SCOWTimeDurationYearLabel                       "This year:">
-<!ENTITY SCOWTimeDurationRemainingLabel                       "Time Remaining:">
-<!ENTITY SCOWTimeBlockCheckboxLabel               "Block">
-<!ENTITY SCOWHoursInputLabel                     "Block for number of hours">
-<!ENTITY SCOWMinutesInputLabel                   "Block for number of minutes">
+<!ENTITY SCOWGroupBoxLabel                       "Time Spent">
+<!ENTITY SCOWTimeTodayLabel                      "Today:">
+<!ENTITY SCOWTimeWeekLabel                       "This week:">
+<!ENTITY SCOWTimeMonthLabel                      "This month:">
+<!ENTITY SCOWTimeYearLabel                       "This year:">
+<!ENTITY SCOWTimeRemainingLabel                  "Time Remaining:">
+<!ENTITY SCOWTimeBlockCheckboxLabel              "Block">
+<!ENTITY SCOWUntilBlockButtonLabel               "Set date">
+<!ENTITY SCOWBlockUntilLabel                     "Block Until...">
+<!ENTITY SCOWBlockTimeAMLabel                    "AM">
+<!ENTITY SCOWBlockTimePMLabel                    "PM">
